@@ -19,10 +19,11 @@ def draw
 end
 
 def drawCell
-  scalar = P5.height / NUM
-  y = 0
+  #scalar = P5.height / NUM
+  scalar = 5.00 # 小数を扱いたい
+  y = 0.0
   NUM.times do |i|
-    x = 0
+    x = 0.0
     NUM.times do |j|
       P5.noStroke()
       col = ($state[i][j] * 1.0) / MOD
@@ -36,6 +37,7 @@ end
 
 def updateState
   nextState = Array.new(NUM).map{Array.new(NUM, 0)}
+
   NUM.times do |i|
     NUM.times do |j|
       nextState[i][j] = transition(i, j)

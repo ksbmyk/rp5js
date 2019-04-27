@@ -30,8 +30,6 @@ function initialize(){
 
 function drawCell(){
   var scalar = float(height/ num);
-  // float y = 0;
-  // float x;
   var y = 0;
   var x;
   for (i = 0; i < num; i++){

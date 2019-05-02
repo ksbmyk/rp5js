@@ -11,7 +11,8 @@ $itr = 0
 
 def setup
   P5.createCanvas(600, 600)
-  P5.colorMode(P5.HSB, 1)
+  # HSB, 色相の範囲, 彩度の範囲, 明度の範囲
+  P5.colorMode(P5.HSB, 1, 100, 100)
 end
 
 
@@ -20,6 +21,7 @@ def draw
     $itr += 1
     if ($itr % 2 == 1)
       while ($xPos + $wd <= $numA) do
+        P5.stroke(0,0,60)
         P5.fill(color_code)
         P5.rect($xPos, $yPos, $wd, $wd)
         $xPos += $wd
@@ -27,6 +29,7 @@ def draw
       $wd = $numA - $xPos
     else
       while ($yPos + $wd <= $numB) do
+        P5.stroke(0,0,60)
         P5.fill(color_code)
         P5.rect($xPos, $yPos, $wd, $wd)
         $yPos += $wd
@@ -37,5 +40,7 @@ def draw
 end
 
 def color_code
-  P5.color(P5.random(1), 1, 1)
+  # 色相の値, 彩度の値, 明度の値
+  # 彩度を低くして淡い色にした
+  P5.color(P5.random(1), 10, 99)
 end

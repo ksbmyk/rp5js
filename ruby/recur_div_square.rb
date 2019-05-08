@@ -11,7 +11,11 @@ end
 
 #正方形の分割
 def divSquare(xPos, yPos, wd)
-
+  @itr = 0
+  @xEndPos = wd + xPos
+  @yEndPos = wd + yPos
+  P5.fill(P5.color(P5.random(1), 1, 1))
+  P5.rect(xPos, yPos, wd, wd)
 end
 
 def draw

@@ -36,9 +36,9 @@ def divRect(xPos, yPos, wd)
   itr = 0
   xEndPos = wd + xPos
   yEndPos = wd + yPos
-  P5.fill(color(P5.random(1), 1, 1))
+  P5.fill(P5.color(P5.random(1), 1, 1))
   P5.rect(xPos, yPos, wd, wd)
-  while (wd > thr) do
+  while (wd > @thr) do
     itr += 1
     if itr % 2 == 0
       while (xPos + wd < xEndPos + 0.1) do

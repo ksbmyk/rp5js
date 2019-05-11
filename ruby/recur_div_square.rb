@@ -5,7 +5,7 @@ def setup
   @thr = 160  #しきい値
   P5.createCanvas(500, 500)
   P5.colorMode(P5.HSB, 1)
-  divSquare(0, 0, width)
+  divSquare(0, 0, P5.width)
 end
 
 #正方形の分割

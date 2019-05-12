@@ -9,7 +9,10 @@ def setup
 end
 
 #正方形の分割
-def divSquare(xPos, yPos, wd)
+def divSquare(x, y, width)
+  xPos = x
+  yPos = y
+  wd = width
   itr = 0
   xEndPos = wd + xPos
   yEndPos = wd + yPos
@@ -20,13 +23,16 @@ def divSquare(xPos, yPos, wd)
     if (itr % 2 == 1)
       while (xPos + wd * @ratio < xEndPos + 0.1) do
         divRect(xPos, yPos, wd * @ratio)
+        xPos += wd * @ratio
       end
-      xPos += wd * @ratio
+      wd = xEndPos - xPos;
     else
-      divRect(xPos, yPos, wd)
-      yPos += wd / @ratio
+      while (yPos + wd / @ratio < yEndPos + 0.1) do
+        divRect(xPos, yPos, wd)
+        yPos += wd / @ratio
+      end
+      wd = yEndPos - yPos
     end
-    wd = yEndPos - yPos
   end
 end
 

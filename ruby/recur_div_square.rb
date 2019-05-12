@@ -5,7 +5,7 @@ def setup
   @thr = 160  #しきい値
   P5.createCanvas(500, 500)
   P5.colorMode(P5.HSB, 1)
-  divSquare(0, 0, P5.width)
+  divSquare(0, 0, P5.width-1)
 end
 
 #正方形の分割
@@ -37,7 +37,10 @@ def divSquare(x, y, width)
 end
 
 #長方形を分割する関数
-def divRect(xPos, yPos, wd)
+def divRect(x, y, width)
+  xPos = x
+  yPos = y
+  wd = width
   itr = 0
   xEndPos = wd + xPos
   yEndPos = wd + yPos

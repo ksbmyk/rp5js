@@ -66,3 +66,16 @@ end
 
 def draw
 end
+
+def mouseClicked
+  numA = P5.random(1, 20)  #1以上20以下のランダムな整数を代入
+  numB = P5.random(1, 20)
+  while (numA == numB) do #numAとnumBが異なるようにする
+    numB = P5.random(1, 20)
+  end
+  thr = P5.random(10,300)
+  #print("numA =", numA, "numB =", numB,"thr =", thr);  //numA,numB,thrの値を表示
+  @ratio = numA / numB
+  P5.background(0, 0, 1)  #背景を白で消去
+  divSquare(0, 0, P5.width-1)
+end

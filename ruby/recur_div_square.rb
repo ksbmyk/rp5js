@@ -1,8 +1,8 @@
+THR = 160 #しきい値
 def setup
   @numA = 10
   @numB = 6
   @ratio = @numB / @numA
-  @thr = 160  #しきい値
   P5.createCanvas(500, 500)
   P5.colorMode(P5.HSB, 1)
   divSquare(0, 0, P5.width-1)
@@ -18,7 +18,7 @@ def divSquare(x, y, width)
   yEndPos = wd + yPos
   P5.fill(P5.color(P5.random(1), 1, 1))
   P5.rect(xPos, yPos, wd, wd)
-  while wd > @thr do
+  while wd > THR do
     itr += 1
     if (itr % 2 == 1)
       while (xPos + wd * @ratio < xEndPos + 0.1) do
@@ -46,7 +46,7 @@ def divRect(x, y, width)
   yEndPos = wd + yPos
   P5.fill(P5.color(P5.random(1), 1, 1))
   P5.rect(xPos, yPos, wd, wd)
-  while (wd > @thr) do
+  while wd > THR do
     itr += 1
     if itr % 2 == 0
       while (xPos + wd < xEndPos + 0.1) do
@@ -74,7 +74,7 @@ def mouseClicked
     numB = P5.random(1, 20)
   end
   thr = P5.random(10,300)
-  #print("numA =", numA, "numB =", numB,"thr =", thr);  //numA,numB,thrの値を表示
+  print "numA = #{numA} numB = #{numB} thr = #{thr}"  #numA,numB,thrの値を表示
   @ratio = numA / numB
   P5.background(0, 0, 1)  #背景を白で消去
   divSquare(0, 0, P5.width-1)

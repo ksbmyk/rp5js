@@ -14,6 +14,7 @@ def divSquare(x, y, width)
   xPos = x
   yPos = y
   wd = width
+
   itr = 0
   xEndPos = wd + xPos
   yEndPos = wd + yPos
@@ -42,21 +43,22 @@ def divRect(x, y, width)
   xPos = x
   yPos = y
   wd = width
+
   itr = 0
-  xEndPos = wd + xPos
-  yEndPos = wd + yPos
+  xEndPos = xPos + wd
+  yEndPos = yPos + wd / @ratio
   P5.fill(P5.color(P5.random(1), 1, 1))
-  P5.rect(xPos, yPos, wd, wd)
+  P5.rect(xPos, yPos, wd, wd / @ratio)
   while wd > THR do
     itr += 1
     if itr % 2 == 0
-      while (xPos + wd < xEndPos + 0.1) do
+      while xPos + wd < xEndPos + 0.1 do
         divSquare(xPos, yPos, wd)
         xPos += wd
       end
       wd = xEndPos - xPos
     else
-      while (yPos + wd < yEndPos + 0.1) do
+      while yPos + wd < yEndPos + 0.1 do
         divSquare(xPos, yPos, wd)
         yPos += wd
       end

@@ -29,6 +29,34 @@ function colorRect(xPos, yPos, wd, ht){
   rect(xPos, yPos, wd, ht);
 }
 
-function divSquare(x, y, width){
+function divSquare(xPos, yPos, wd){
+  var itr = 0;
+  var xEndPos = wd + xPos;  //正方形の横の長さ
+  var yEndPos = wd + yPos;  //正方形の縦の長さ
+  while (wd > thr){  //正方形の幅がしきい値以上の場合に実行
+    itr++;
+    if (itr % 2 ==1){
+      while (xPos + wd * ratio < xEndPos + 0.1){
+        colorRect(xPos, yPos, wd * ratio, wd);  //長方形を描く
+        if (random(1) < thr2){  //thr2の確率で再分割
+          divRect(xPos, yPos, wd * ratio);  //長方形を分割する関数の呼び出し
+        }
+        xPos += wd * ratio;
+      }
+      wd = xEndPos - xPos;
+    } else {
+      while (yPos + wd / ratio < yEndPos + 0.1){
+        colorRect(xPos, yPos, wd, wd / ratio);  //長方形を描く
+        if (random(1) < thr2){  //thr2の確率で再分割
+          divRect(xPos, yPos, wd);  //長方形を分割する関数の呼び出し
+        }
+        yPos += wd / ratio;
+      }
+      wd = yEndPos - yPos;
+    }
+  }
+}
+
+function divRect(xPos, yPos, wd){
 
 }

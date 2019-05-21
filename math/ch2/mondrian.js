@@ -1,6 +1,7 @@
 var ratio = (sqrt(5) + 1) / 2;  //黄金数 //sqrt is not defined
 var thr = 80;  //float 分割する大きさに関するしきい値
 var thr2 = 0.5; //確率を決定するしきい値
+
 function setup(){
   createCanvas(500, 500);
   colorMode(HSB, 1);
@@ -57,14 +58,38 @@ function divSquare(xPos, yPos, wd){
   }
 }
 
-function divRect(xPos, yPos, wd){
-
+function divRect(xPos, yPos, wd){　//長方形を分割する関数
+  var itr = 0;
+  var xEndPos = xPos + wd;  //長方形の横の長さ
+  var yEndPos = yPos + wd / ratio;   //長方形の縦の長さ
+  while (wd > thr){   //wdがしきい値以上の場合に処理を行う
+    itr++;
+    if (itr % 2 == 0){
+      while (xPos + wd < xEndPos + 0.1){
+        colorRect(xPos, yPos, wd, wd);  //正方形を描く
+        if (random(1) < thr2){
+          divSquare(xPos, yPos, wd);  //正方形を分割する関数の呼び出し
+        }
+        xPos += wd;
+      }
+      wd = xEndPos - xPos;
+    } else {
+      while (yPos + wd < yEndPos + 0.1){
+        colorRect(xPos, yPos, wd, wd);  //正方形を描く
+        if (random(1) < thr2){
+          divSquare(xPos, yPos, wd);  //正方形を分割する関数の呼び出し
+        }
+        yPos += wd;
+      }
+      wd = yEndPos - yPos;
+    }
+  }
 }
 
 function mouseClicked(){
   thr = int(random(10, 300));
   thr2 = random(0,1);
-  println("thr =", thr, "thr2 =", thr2);
+  console.log("thr =", thr, "thr2 =", thr2);
   colorRect(0, 0, width, width);
   divSquare(0, 0, width);
 }

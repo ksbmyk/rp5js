@@ -1,4 +1,4 @@
-var ratio = (sqrt(5) + 1) / 2;  //黄金数 //sqrt is not defined
+var ratio = (2.23606797749979 + 1) / 2; //sqrt(5)を使って平方根を出し、そこから黄金数を求めたかったが、"sqrt is not defined"とでてしまった
 var thr = 80;  //float 分割する大きさに関するしきい値
 var thr2 = 0.5; //確率を決定するしきい値
 
@@ -36,7 +36,7 @@ function divSquare(xPos, yPos, wd){
   var yEndPos = wd + yPos;  //正方形の縦の長さ
   while (wd > thr){  //正方形の幅がしきい値以上の場合に実行
     itr++;
-    if (itr % 2 ==1){
+    if (itr % 2 == 1){
       while (xPos + wd * ratio < xEndPos + 0.1){
         colorRect(xPos, yPos, wd * ratio, wd);  //長方形を描く
         if (random(1) < thr2){  //thr2の確率で再分割
@@ -93,4 +93,5 @@ function mouseClicked(){
   colorRect(0, 0, width, width);
   divSquare(0, 0, width);
 }
+
 function draw(){}

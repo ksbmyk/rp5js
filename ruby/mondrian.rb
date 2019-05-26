@@ -16,6 +16,23 @@ def mouseClicked
 end
 
 def colorRect(xPos, yPos, wd, ht)
+  val = P5.random(1)
+  if (val < 0.15)  #15%の確率
+    col = P5.color(0, 1, 1) #赤
+  elsif (val < 0.3) #15%の確率
+    col = P5.color(2.0 / 3, 1, 1) #青
+  elsif (val < 0.45)  #15%の確率
+    col = P5.color(1.0 / 6, 1, 1) #黄
+  elsif (val < 0.5) #5%の確率
+    col = P5.color(0, 1, 0) #黒
+  elsif (val < 0.7)  #20%の確率
+    col = P5.color(0, 0, 0.9) #灰
+  else   #30%の確率
+    col = P5.color(0, 0, 1) #白
+  end
+  P5.fill(col)
+  P5.strokeWeight(5)  #長方形の枠線の太さ
+  P5.rect(xPos, yPos, wd, ht)
 end
 
 def divSquare(xPos, yPos, wd)

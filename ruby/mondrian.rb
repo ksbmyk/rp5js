@@ -13,6 +13,10 @@ def draw
 end
 
 def mouseClicked
+  thr = P5.random(10, 300)
+  thr2 = P5.random(0,1)
+  colorRect(0, 0, P5.width - 1, P5.width - 1)
+  divSquare(0, 0, P5.width - 1)
 end
 
 def colorRect(xPos, yPos, wd, ht)

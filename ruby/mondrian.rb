@@ -68,4 +68,29 @@ def divSquare(xPos, yPos, wd)
 end
 
 def divRect(xPos, yPos, wd)
+  itr = 0
+  xEndPos = xPos + wd  #長方形の横の長さ
+  yEndPos = yPos + wd / RATIO   #長方形の縦の長さ
+  while (wd > @thr)   #wdがしきい値以上の場合に処理を行う
+    itr += 1
+    if (itr % 2 == 0)
+      while (xPos + wd < xEndPos + 0.1) do
+        colorRect(xPos, yPos, wd, wd)  #正方形を描く
+        if (P5.random(1) < @thr2)
+          divSquare(xPos, yPos, wd)  #正方形を分割する関数の呼び出し
+        end
+        xPos += wd
+      end
+      wd = xEndPos - xPos
+    else
+      while (yPos + wd < yEndPos + 0.1) do
+        colorRect(xPos, yPos, wd, wd)  #正方形を描く
+        if (P5.random(1) < @thr2)
+          divSquare(xPos, yPos, wd)  #正方形を分割する関数の呼び出し
+        end
+        yPos += wd
+      end
+      wd = yEndPos - yPos
+    end
+  end
 end

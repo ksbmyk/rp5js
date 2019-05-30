@@ -14,7 +14,7 @@ module P5
     }
   end
 
-  def self.createCanvas(*args)
+  def self.create_canvas(*args)
     %x{
       return window['createCanvas'].apply(window, args);
     }

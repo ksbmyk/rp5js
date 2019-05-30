@@ -12,7 +12,7 @@ end
 def draw
 end
 
-def mouseClicked
+def mouse_clicked
   @thr = P5.random(10, 300)
   @thr2 = P5.random(0,1)
   colorRect(0, 0, P5.width - 1, P5.width - 1)

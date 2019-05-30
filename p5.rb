@@ -59,6 +59,6 @@ module P5
   %x{
     window.setup = function() { Opal.top.$setup(); };
     window.draw = function() { Opal.top.$draw(); };
-    window.mouseClicked = function() { Opal.top.$mouseClicked(); };
+    window.mouseClicked = function() { Opal.top.$mouse_clicked(); };
   }
 end

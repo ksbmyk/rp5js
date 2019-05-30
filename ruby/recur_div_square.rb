@@ -70,7 +70,7 @@ end
 def draw
 end
 
-def mouseClicked
+def mouse_clicked
   numA = P5.random(1, 20)  #1以上20以下のランダムな整数を代入
   numB = P5.random(1, 20)
   while (numA == numB) do #numAとnumBが異なるようにする

@@ -5,7 +5,7 @@ NUMB = 6
 def setup
   @ratio = NUMB / NUMA
   P5.create_canvas(500, 500)
-  P5.colorMode(P5.HSB, 1)
+  P5.color_mode(P5.HSB, 1)
   divSquare(0, 0, P5.width-1)
 end
 

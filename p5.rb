@@ -20,7 +20,7 @@ module P5
     }
   end
 
-  def self.colorMode(*args)
+  def self.color_mode(*args)
     %x{
       return window['colorMode'].apply(window, args);
     }

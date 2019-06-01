@@ -5,7 +5,7 @@ def setup
   @thr2 = 0.5 # 確率を決定するしきい値
   P5.create_canvas(500, 500)
   P5.color_mode(P5.HSB, 1)
-  colorRect(0, 0, P5.width - 1, P5.width - 1)
+  color_rect(0, 0, P5.width - 1, P5.width - 1)
   divSquare(0, 0, P5.width - 1)
 end
 
@@ -15,11 +15,11 @@ end
 def mouse_clicked
   @thr = P5.random(10, 300)
   @thr2 = P5.random(0,1)
-  colorRect(0, 0, P5.width - 1, P5.width - 1)
+  color_rect(0, 0, P5.width - 1, P5.width - 1)
   divSquare(0, 0, P5.width - 1)
 end
 
-def colorRect(xPos, yPos, wd, ht)
+def color_rect(xPos, yPos, wd, ht)
   case P5.random(1)
   when 0...0.15 # 15%の確率
     col = P5.color(0, 1, 1) # 赤
@@ -47,7 +47,7 @@ def divSquare(xPos, yPos, wd)
     itr += 1
     if itr % 2 == 1
       while (xPos + wd * RATIO < xEndPos + 0.1) do
-        colorRect(xPos, yPos, wd * RATIO, wd)  # 長方形を描く
+        color_rect(xPos, yPos, wd * RATIO, wd)  # 長方形を描く
         if P5.random(1) < @thr2  # thr2の確率で再分割
           divRect(xPos, yPos, wd * RATIO)  # 長方形を分割する関数の呼び出し
         end
@@ -56,7 +56,7 @@ def divSquare(xPos, yPos, wd)
       wd = xEndPos - xPos
     else
       while (yPos + wd / RATIO < yEndPos + 0.1) do
-        colorRect(xPos, yPos, wd, wd / RATIO)  # 長方形を描く
+        color_rect(xPos, yPos, wd, wd / RATIO)  # 長方形を描く
         if P5.random(1) < @thr2  # thr2の確率で再分割
           divRect(xPos, yPos, wd)  # 長方形を分割する関数の呼び出し
         end
@@ -75,7 +75,7 @@ def divRect(xPos, yPos, wd)
     itr += 1
     if (itr % 2 == 0)
       while (xPos + wd < xEndPos + 0.1) do
-        colorRect(xPos, yPos, wd, wd)  # 正方形を描く
+        color_rect(xPos, yPos, wd, wd)  # 正方形を描く
         if (P5.random(1) < @thr2)
           divSquare(xPos, yPos, wd)  # 正方形を分割する関数の呼び出し
         end
@@ -84,7 +84,7 @@ def divRect(xPos, yPos, wd)
       wd = xEndPos - xPos
     else
       while (yPos + wd < yEndPos + 0.1) do
-        colorRect(xPos, yPos, wd, wd)  # 正方形を描く
+        color_rect(xPos, yPos, wd, wd)  # 正方形を描く
         if (P5.random(1) < @thr2)
           divSquare(xPos, yPos, wd)  # 正方形を分割する関数の呼び出し
         end

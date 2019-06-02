@@ -49,7 +49,7 @@ def div_square(xPos, yPos, wd)
       while (xPos + wd * RATIO < xEndPos + 0.1) do
         color_rect(xPos, yPos, wd * RATIO, wd)  # 長方形を描く
         if P5.random(1) < @thr2  # thr2の確率で再分割
-          divRect(xPos, yPos, wd * RATIO)  # 長方形を分割する関数の呼び出し
+          div_rect(xPos, yPos, wd * RATIO)  # 長方形を分割する関数の呼び出し
         end
         xPos += wd * RATIO
       end
@@ -58,7 +58,7 @@ def div_square(xPos, yPos, wd)
       while (yPos + wd / RATIO < yEndPos + 0.1) do
         color_rect(xPos, yPos, wd, wd / RATIO)  # 長方形を描く
         if P5.random(1) < @thr2  # thr2の確率で再分割
-          divRect(xPos, yPos, wd)  # 長方形を分割する関数の呼び出し
+          div_rect(xPos, yPos, wd)  # 長方形を分割する関数の呼び出し
         end
         yPos += wd / RATIO
       end
@@ -67,7 +67,7 @@ def div_square(xPos, yPos, wd)
   end
 end
 
-def divRect(xPos, yPos, wd)
+def div_rect(xPos, yPos, wd)
   itr = 0
   xEndPos = xPos + wd  # 長方形の横の長さ
   yEndPos = yPos + wd / RATIO   # 長方形の縦の長さ

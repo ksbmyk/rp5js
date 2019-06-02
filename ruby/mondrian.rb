@@ -6,7 +6,7 @@ def setup
   P5.create_canvas(500, 500)
   P5.color_mode(P5.HSB, 1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
-  divSquare(0, 0, P5.width - 1)
+  div_square(0, 0, P5.width - 1)
 end
 
 def draw
@@ -16,7 +16,7 @@ def mouse_clicked
   @thr = P5.random(10, 300)
   @thr2 = P5.random(0,1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
-  divSquare(0, 0, P5.width - 1)
+  div_square(0, 0, P5.width - 1)
 end
 
 def color_rect(xPos, yPos, wd, ht)
@@ -39,7 +39,7 @@ def color_rect(xPos, yPos, wd, ht)
   P5.rect(xPos, yPos, wd, ht)
 end
 
-def divSquare(xPos, yPos, wd)
+def div_square(xPos, yPos, wd)
   itr = 0
   xEndPos = wd + xPos  # 正方形の横の長さ
   yEndPos = wd + yPos  # 正方形の縦の長さ
@@ -77,7 +77,7 @@ def divRect(xPos, yPos, wd)
       while (xPos + wd < xEndPos + 0.1) do
         color_rect(xPos, yPos, wd, wd)  # 正方形を描く
         if (P5.random(1) < @thr2)
-          divSquare(xPos, yPos, wd)  # 正方形を分割する関数の呼び出し
+          div_square(xPos, yPos, wd)  # 正方形を分割する関数の呼び出し
         end
         xPos += wd
       end
@@ -86,7 +86,7 @@ def divRect(xPos, yPos, wd)
       while (yPos + wd < yEndPos + 0.1) do
         color_rect(xPos, yPos, wd, wd)  # 正方形を描く
         if (P5.random(1) < @thr2)
-          divSquare(xPos, yPos, wd)  # 正方形を分割する関数の呼び出し
+          div_square(xPos, yPos, wd)  # 正方形を分割する関数の呼び出し
         end
         yPos += wd
       end

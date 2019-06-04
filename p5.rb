@@ -56,6 +56,12 @@ module P5
     }
   end
 
+  def stroke_weight(*args)
+    %x{
+      return window['strokeWeight'].apply(window, args);
+    }
+  end
+
   %x{
     window.setup = function() { Opal.top.$setup(); };
     window.draw = function() { Opal.top.$draw(); };

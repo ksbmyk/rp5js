@@ -35,30 +35,30 @@ def color_rect(x_pos, y_pos, wd, ht)
     col = P5.color(0, 0, 1) # 白
   end
   P5.fill(col)
-  P5.stroke_weight(5)  # 長方形の枠線の太さ
+  P5.stroke_weight(5) # 長方形の枠線の太さ
   P5.rect(x_pos, y_pos, wd, ht)
 end
 
 def div_square(x_pos, y_pos, wd)
   itr = 0
-  x_end_pos = wd + x_pos  # 正方形の横の長さ
-  y_end_pos = wd + y_pos  # 正方形の縦の長さ
+  x_end_pos = wd + x_pos # 正方形の横の長さ
+  y_end_pos = wd + y_pos # 正方形の縦の長さ
   while wd > @thr do  # 正方形の幅がしきい値以上の場合に実行
     itr += 1
     if itr % 2 == 1
       while (x_pos + wd * RATIO < x_end_pos + 0.1) do
-        color_rect(x_pos, y_pos, wd * RATIO, wd)  # 長方形を描く
-        if P5.random(1) < @thr2  # thr2の確率で再分割
-          div_rect(x_pos, y_pos, wd * RATIO)  # 長方形を分割する関数の呼び出し
+        color_rect(x_pos, y_pos, wd * RATIO, wd) # 長方形を描く
+        if P5.random(1) < @thr2 # thr2の確率で再分割
+          div_rect(x_pos, y_pos, wd * RATIO) # 長方形を分割する関数の呼び出し
         end
         x_pos += wd * RATIO
       end
       wd = x_end_pos - x_pos
     else
       while (y_pos + wd / RATIO < y_end_pos + 0.1) do
-        color_rect(x_pos, y_pos, wd, wd / RATIO)  # 長方形を描く
-        if P5.random(1) < @thr2  # thr2の確率で再分割
-          div_rect(x_pos, y_pos, wd)  # 長方形を分割する関数の呼び出し
+        color_rect(x_pos, y_pos, wd, wd / RATIO) # 長方形を描く
+        if P5.random(1) < @thr2 # thr2の確率で再分割
+          div_rect(x_pos, y_pos, wd) # 長方形を分割する関数の呼び出し
         end
         y_pos += wd / RATIO
       end
@@ -70,23 +70,23 @@ end
 def div_rect(x_pos, y_pos, wd)
   itr = 0
   x_end_pos = x_pos + wd  # 長方形の横の長さ
-  y_end_pos = y_pos + wd / RATIO   # 長方形の縦の長さ
-  while (wd > @thr)   # wdがしきい値以上の場合に処理を行う
+  y_end_pos = y_pos + wd / RATIO  # 長方形の縦の長さ
+  while (wd > @thr) # wdがしきい値以上の場合に処理を行う
     itr += 1
     if (itr % 2 == 0)
       while (x_pos + wd < x_end_pos + 0.1) do
-        color_rect(x_pos, y_pos, wd, wd)  # 正方形を描く
+        color_rect(x_pos, y_pos, wd, wd) # 正方形を描く
         if (P5.random(1) < @thr2)
-          div_square(x_pos, y_pos, wd)  # 正方形を分割する関数の呼び出し
+          div_square(x_pos, y_pos, wd) # 正方形を分割する関数の呼び出し
         end
         x_pos += wd
       end
       wd = x_end_pos - x_pos
     else
       while (y_pos + wd < y_end_pos + 0.1) do
-        color_rect(x_pos, y_pos, wd, wd)  # 正方形を描く
+        color_rect(x_pos, y_pos, wd, wd) # 正方形を描く
         if (P5.random(1) < @thr2)
-          div_square(x_pos, y_pos, wd)  # 正方形を分割する関数の呼び出し
+          div_square(x_pos, y_pos, wd) # 正方形を分割する関数の呼び出し
         end
         y_pos += wd
       end

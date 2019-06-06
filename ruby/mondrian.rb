@@ -45,7 +45,7 @@ def div_square(x_pos, y_pos, wd)
   y_end_pos = wd + y_pos # 正方形の縦の長さ
   while wd > @thr do  # 正方形の幅がしきい値以上の場合に実行
     itr += 1
-    if itr % 2 == 1
+    if itr.odd?
       while (x_pos + wd * RATIO < x_end_pos + 0.1) do
         color_rect(x_pos, y_pos, wd * RATIO, wd) # 長方形を描く
         if P5.random(1) < @thr2 # thr2の確率で再分割

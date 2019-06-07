@@ -1,6 +1,8 @@
 module P5
   def self.method_missing(name, *args)
-    #puts name
+    puts name
+    puts args
+    puts("---")
     %x{
       obj = window[name];
       // 関数かどうか
@@ -53,12 +55,6 @@ module P5
   def self.color(*args)
     %x{
       return window['color'].apply(window, args);
-    }
-  end
-
-  def stroke_weight(*args)
-    %x{
-      return window['strokeWeight'].apply(window, args);
     }
   end
 

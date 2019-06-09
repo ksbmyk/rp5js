@@ -35,7 +35,7 @@ def color_rect(x_pos, y_pos, wd, ht)
     col = P5.color(0, 0, 1) # 白
   end
   P5.fill(col)
-  P5.strokeWeight(5) # 長方形の枠線の太さ
+  P5.stroke_weight(5) # 長方形の枠線の太さ
   P5.rect(x_pos, y_pos, wd, ht)
 end
 

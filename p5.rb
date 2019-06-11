@@ -13,6 +13,12 @@ module P5
     }
   end
 
+  def self.noLoop(*args)
+    %x{
+      return window['noLoop'].apply(window, args);
+    }
+  end
+
   def self.width
     %x{
       return window['width'];
@@ -61,7 +67,7 @@ module P5
     }
   end
 
-  def self.(*args)
+  def self.stroke_weight(*args)
     %x{
     return window['strokeWeight'].apply(window, args);
     }

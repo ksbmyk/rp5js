@@ -4,8 +4,8 @@ MOD = 20
 def setup
   @gen = 0
   @state = Array.new(NUM).map{Array.new(NUM, 0)}
-  P5.createCanvas(500, 500)
-  P5.colorMode(P5.HSB, 1)
+  P5.create_canvas(500, 500)
+  P5.color_mode(P5.HSB, 1)
   @state[0][0] = 1
 end
 

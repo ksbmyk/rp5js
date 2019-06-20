@@ -1,4 +1,4 @@
-var fibo = [0, 1]; // TODO フィボナッチ数列にする
+var fibo = [0, 1]
 function setup(){
   createCanvas(500, 500);
   colorMode(HSB, 1);
@@ -27,10 +27,11 @@ function drawSquare(){
   }
 }
 function mouseClicked() {
+    // console.log(fibo);
   nextFibo = fibo[fibo.length-2] + fibo[fibo.length-1]; //新しいフィボナッチ数を計算
   fibo = append(fibo, nextFibo);  //新しいフィボナッチ数を配列に加える
   drawSquare();
-  console.log(nextFibo);
+  console.log(fibo);
 }
 function draw(){
 

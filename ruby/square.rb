@@ -12,7 +12,7 @@ end
 def draw_square
   xPos = 0  #正方形のx位置
   yPos = 0  #正方形のy位置
-  nextFibo = @fibo[@fibo.length-2] + @fibo[@fibo.length-1] # 次のフィボナッチ数(漸化式)
+  nextFibo = next_fibo(@fibo)
   scalar = P5.width / nextFibo # 長方形がウィンドウ幅に収まるように拡大
   P5.background(0, 0, 1) # 描画ごとに背景を白く塗りつぶし
 
@@ -20,7 +20,12 @@ def draw_square
 end
 
 def mouse_clicked
-  nextFibo = @fibo[@fibo.length-2] + @fibo[@fibo.length-1]
+  nextFibo = next_fibo(@fibo)
   @fibo = P5.append(@fibo, nextFibo)
   draw_square
+end
+
+# 次のフィボナッチ数(漸化式)
+def next_fibo(fibo)
+  fibo[fibo.length-2] + fibo[fibo.length-1]
 end

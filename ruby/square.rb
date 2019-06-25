@@ -1,4 +1,3 @@
-
 def setup
   @fibo = [0, 1]
   P5.create_canvas(500, 500)
@@ -12,10 +11,20 @@ end
 def draw_square
   xPos = 0  #正方形のx位置
   yPos = 0  #正方形のy位置
-  scalar = P5.width / next_fibo(@fibo) # 長方形がウィンドウ幅に収まるように拡大
+  scalar = (P5.width - 1) / next_fibo(@fibo) # 長方形がウィンドウ幅に収まるように拡大
   P5.background(0, 0, 1) # 描画ごとに背景を白く塗りつぶし
 
-  P5.rect(5, 5, 5, 5) # TODO 描画テスト用
+  (1...@fibo.length).each do |i|
+    P5.fill((0.1 * i) % 1, 1, 1)
+    P5.rect(scalar * xPos, scalar * yPos, scalar * @fibo[i], scalar * @fibo[i])
+    if i.odd?
+      xPos += @fibo[i]
+      yPos -= @fibo[i-1]
+    else
+      xPos -= @fibo[i-1]
+      yPos += @fibo[i]
+    end
+  end
 end
 
 def mouse_clicked

@@ -1,6 +1,6 @@
 def setup
   @fibo = [0, 1]
-  P5.create_canvas(500, 500)
+  P5.create_canvas(1000, 1000)
   P5.color_mode(P5.HSB, 1)
   draw_square()
 end

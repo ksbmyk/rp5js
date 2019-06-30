@@ -75,7 +75,13 @@ module P5
 
   def self.stroke_weight(*args)
     %x{
-    return window['strokeWeight'].apply(window, args);
+      return window['strokeWeight'].apply(window, args);
+    }
+  end
+
+  def self.append(*args)
+    %x{
+      return window['append'].apply(window, args);
     }
   end
 

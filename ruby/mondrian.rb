@@ -30,13 +30,14 @@ def color_rect(x_pos, y_pos, wd, ht)
     col = P5.color("#4b92f7")
   when 0.3...0.45  # 15%の確率
     # col = P5.color(1.0 / 6, 1, 1) # 黄
-    col = P5.color("#fced4f")
+    col = P5.color("#9cee60") # 緑
   when 0.45...0.5 # 5%の確率
     col = P5.color(0, 1, 0) # 黒
     col = P5.color("#000000")
   when 0.5...0.7  #20%の確率
     # col = P5.color(0, 0, 0.9) # 灰
-    col = P5.color("#9cee60")
+    
+    col = P5.color("#fced4f") #黄
   else   # 30%の確率
     #col = P5.color(0, 0, 1) # 白
     col = P5.color("ffffff") # 白

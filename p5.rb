@@ -85,6 +85,12 @@ module P5
     }
   end
 
+  def self.background(*args)
+    %x{
+      return window['background'].apply(window, args);
+    }
+  end
+
   %x{
     window.setup = function() { Opal.top.$setup(); };
     window.draw = function() { Opal.top.$draw(); };

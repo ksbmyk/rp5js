@@ -31,13 +31,13 @@ module P5
     }
   end
 
-  def self.create_canvas(*args)
+  def self.createCanvas(*args)
     %x{
       return window['createCanvas'].apply(window, args);
     }
   end
 
-  def self.color_mode(*args)
+  def self.colorMode(*args)
     %x{
       return window['colorMode'].apply(window, args);
     }
@@ -73,7 +73,7 @@ module P5
     }
   end
 
-  def self.stroke_weight(*args)
+  def self.strokeWeight(*args)
     %x{
       return window['strokeWeight'].apply(window, args);
     }

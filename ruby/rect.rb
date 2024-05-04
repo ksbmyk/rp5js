@@ -11,7 +11,7 @@ def setup
   @itr = 0
   P5.createCanvas(600, 600)
   # HSB, 色相の範囲, 彩度の範囲, 明度の範囲
-  P5.color_mode(P5.HSB, 1, 100, 100)
+  P5.colorMode(P5.HSB, 1, 100, 100)
 end
 
 def draw

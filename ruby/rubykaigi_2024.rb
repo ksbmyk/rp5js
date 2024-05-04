@@ -5,13 +5,6 @@ def setup
 end
 
 def draw
-  P5.stroke(0)
-  P5.rect(0,10,10)
-end
-
-
-def draw
-  
   # フレーム
   P5.stroke(0)
   rect_size = 80
@@ -30,7 +23,7 @@ def draw
   # P5.rect(rect_weight, P5.height - rect_weight - rect_size, rect_size)
   # P5.rect(P5.width - rect_weight - rect_size , P5.height - rect_weight - rect_size, rect_size)
 
-  P5.fill("#4b92f7")
+  P5.fill("gray")
   P5.rect(2, 2, 80)
   P5.rect(700 - 2 - 80 , 2, 80)
   P5.rect(2, 700 - 2 - 80, 80)

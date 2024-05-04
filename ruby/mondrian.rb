@@ -3,8 +3,8 @@ RATIO = (2.23606797749979 + 1) / 2 # 比率 5の平方根に1足して2で割る
 def setup
   @thr = 80  # 分割する大きさに関するしきい値 TODO あとで名前考え直す
   @thr2 = 0.5 # 確率を決定するしきい値
-  P5.create_canvas(500, 500)
-  P5.color_mode(P5.HSB, 1)
+  P5.createCanvas(500, 500)
+  P5.colorMode(P5.HSB, 1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
 end
@@ -35,7 +35,7 @@ def color_rect(x_pos, y_pos, wd, ht)
     col = P5.color(0, 0, 1) # 白
   end
   P5.fill(col)
-  P5.stroke_weight(5) # 長方形の枠線の太さ
+  P5.strokeWeight(5) # 長方形の枠線の太さ
   P5.rect(x_pos, y_pos, wd, ht)
 end
 

@@ -22,8 +22,8 @@ def frame
   # P5.rect(rect_weight, P5.height - rect_weight - rect_size, P5.width, rect_size)
   # P5.rect(rect_weight, rect_weight, rect_size, P5.height)
 
-  col = P5.color("#4b92f7")
-  P5.fill(col)
+  # col = P5.color("#4b92f7")
+  P5.fill("#9cee60")
   P5.rect(rect_weight, rect_weight, rect_size)
   P5.rect(P5.width - rect_weight - rect_size , rect_weight, rect_size)
   P5.rect(rect_weight, P5.height - rect_weight - rect_size, rect_size)

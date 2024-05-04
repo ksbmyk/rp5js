@@ -8,16 +8,21 @@ def setup
   #P5.colorMode(P5.HSB, 1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
+  P5.noLoop
 end
 
 def draw
-end
-
-def mouse_clicked
   @thr = P5.random(10, 300)
   @thr2 = P5.random(0,1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
+end
+
+def mouse_clicked
+  # @thr = P5.random(10, 300)
+  # @thr2 = P5.random(0,1)
+  # color_rect(0, 0, P5.width - 1, P5.width - 1)
+  # div_square(0, 0, P5.width - 1)
 end
 
 def color_rect(x_pos, y_pos, wd, ht)
@@ -36,7 +41,6 @@ def color_rect(x_pos, y_pos, wd, ht)
     col = P5.color("#000000")
   when 0.5...0.7  #20%の確率
     # col = P5.color(0, 0, 0.9) # 灰
-    
     col = P5.color("#fced4f") #黄
   else   # 30%の確率
     #col = P5.color(0, 0, 1) # 白

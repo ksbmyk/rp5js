@@ -4,7 +4,7 @@ def setup
   @thr = 80  # 分割する大きさに関するしきい値 TODO あとで名前考え直す
   @thr2 = 0.5 # 確率を決定するしきい値
   P5.createCanvas(500, 500)
-  P5.colorMode(P5.HSB, 1)
+  #P5.colorMode(P5.HSB, 1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
 end
@@ -22,17 +22,23 @@ end
 def color_rect(x_pos, y_pos, wd, ht)
   case P5.random(1)
   when 0...0.15 # 15%の確率
-    col = P5.color(0, 1, 1) # 赤
+    #col = P5.color(0, 1, 1) # 赤
+    col = P5.color("#ec6158")
   when 0.15...0.3 # 15%の確率
-    col = P5.color(2.0 / 3, 1, 1) # 青
+    # col = P5.color(2.0 / 3, 1, 1) # 青
+    col = P5.color("#4b92f7")
   when 0.3...0.45  # 15%の確率
-    col = P5.color(1.0 / 6, 1, 1) # 黄
+    # col = P5.color(1.0 / 6, 1, 1) # 黄
+    col = P5.color("#fced4f")
   when 0.45...0.5 # 5%の確率
     col = P5.color(0, 1, 0) # 黒
+    col = P5.color("#000000")
   when 0.5...0.7  #20%の確率
-    col = P5.color(0, 0, 0.9) # 灰
+    # col = P5.color(0, 0, 0.9) # 灰
+    col = P5.color("#9cee60")
   else   # 30%の確率
-    col = P5.color(0, 0, 1) # 白
+    #col = P5.color(0, 0, 1) # 白
+    col = P5.color("ffffff") # 白
   end
   P5.fill(col)
   P5.strokeWeight(5) # 長方形の枠線の太さ

@@ -31,6 +31,12 @@ module P5
     }
   end
 
+  def self.windowWidth
+    %x{
+      return window['windowWidth'];
+    }
+  end
+
   def self.createCanvas(*args)
     %x{
       return window['createCanvas'].apply(window, args);

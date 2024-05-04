@@ -9,7 +9,7 @@ def setup
   @xPos = 0
   @yPos = 0
   @itr = 0
-  P5.create_canvas(600, 600)
+  P5.createCanvas(600, 600)
   # HSB, 色相の範囲, 彩度の範囲, 明度の範囲
   P5.color_mode(P5.HSB, 1, 100, 100)
 end

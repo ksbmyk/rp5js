@@ -3,7 +3,7 @@ RATIO = (2.23606797749979 + 1) / 2 # 比率 5の平方根に1足して2で割る
 def setup
   @thr = 80  # 分割する大きさに関するしきい値 TODO あとで名前考え直す
   @thr2 = 0.5 # 確率を決定するしきい値
-  size = P5.windowWidth
+  size = P5.windowWidth - 2
   P5.createCanvas(size, size)
   #P5.colorMode(P5.HSB, 1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)

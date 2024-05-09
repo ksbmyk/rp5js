@@ -9,12 +9,12 @@ def setup
   P5.createCanvas(size, size)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
-  P5.noLoop
+  P5.frameRate(3)
 end
 
 def draw
   @s_thr = P5.random(10, 300)
-  @p_thr = P5.random(0,1)
+  @p_thr = P5.random(0, 1)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
 end

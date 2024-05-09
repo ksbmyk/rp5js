@@ -97,9 +97,16 @@ module P5
     }
   end
 
+  def self.background(*args)
+    %x{
+      return window['frameRate'].apply(window, args);
+    }
+  end
+
   %x{
     window.setup = function() { Opal.top.$setup(); };
     window.draw = function() { Opal.top.$draw(); };
-    window.mouseClicked = function() { Opal.top.$mouse_clicked(); };
+    window.mouseClicked = function() { Opal.top.$mouseClicked(); };
+    window.touchStarted = function() { Opal.top.$touchStarted(); };
   }
 end

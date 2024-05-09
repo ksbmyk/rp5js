@@ -9,7 +9,7 @@ def setup
   P5.createCanvas(size, size)
   color_rect(0, 0, P5.width - 1, P5.width - 1)
   div_square(0, 0, P5.width - 1)
-  P5.frameRate(3)
+  P5.noLoop
 end
 
 def draw
@@ -93,4 +93,11 @@ def div_rect(x_pos, y_pos, wd)
       wd = y_end_pos - y_pos
     end
   end
+end
+
+def touchStarted
+  @s_thr = P5.random(10, 300)
+  @p_thr = P5.random(0, 1)
+  color_rect(0, 0, P5.width, P5.width)
+  div_square(0, 0, P5.width)
 end

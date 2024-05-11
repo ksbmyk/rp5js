@@ -67,6 +67,12 @@ module P5
     }
   end
 
+  def self.ellipse(*args)
+    %x{
+      return window['ellipse'].apply(window, args);
+    }
+  end
+
   def self.random(*args)
     %x{
       return window['random'].apply(window, args);
@@ -106,6 +112,24 @@ module P5
   def self.angleMode(*args)
     %x{
       return window['angleMode'].apply(window, args);
+    }
+  end
+
+  def self.noStroke(*args)
+    %x{
+      return window['noStroke'].apply(window, args);
+    }
+  end
+
+  def self.noFill(*args)
+    %x{
+      return window['noFill'].apply(window, args);
+    }
+  end
+
+  def self.arc(*args)
+    %x{
+      return window['arc'].apply(window, args);
     }
   end
 

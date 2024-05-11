@@ -1,5 +1,6 @@
 def setup
   split = 9
+  size = P5.windowWidth - 2
   @base = size / split
   @colors = ["#B6E3FF", "#54AEFF", "#0969DA", "#0A3069"]
 

@@ -31,15 +31,15 @@ module P5
     }
   end
 
-  def self.push
+  def self.push(*args)
     %x{
-      return window['push'];
+      return window['push'].apply(window, args);
     }
   end
 
-  def self.pop
+  def self.pop(*args)
     %x{
-      return window['pop'];
+      return window['pop'].apply(window, args);
     }
   end
 

@@ -14,7 +14,12 @@
       end
 
       def draw
+        P5.translate(P5.width / 2, P5.height / 2)
+        P5.rotate(P5.PI / 2)
+
         frame
+        minsa
+        ruby
       end
 
       def frame
@@ -27,6 +32,68 @@
         P5.ellipse(0, 0, 190)
         P5.fill(255)
         P5.ellipse(0, 0, 170)
+      end
+
+      def minsa
+        P5.noStroke
+        P5.fill(0)
+        rect_count = 10
+
+        3.times do |t|
+          radius = 100 + 10 * t
+          interval_angle = P5.TWO_PI / rect_count
+
+          rect_count.times do |i|
+            angle = i * interval_angle
+            x = radius * P5.cos(angle)
+            y = radius * P5.sin(angle)
+            P5.push
+            P5.translate(x, y)
+            P5.rotate(angle)
+            P5.rectMode(P5.CENTER)
+
+            if t.even?
+              if i.odd?
+                P5.rect(0, 0, 10, 10)
+              else
+                P5.rect(0, 0 - 10, 10, 10)
+                P5.rect(0, 0 + 10, 10, 10)
+              end
+            else
+              if i.even?
+                P5.rect(0, 0, 10, 10)
+              else
+                P5.rect(0, 0 - 10, 10, 10)
+                P5.rect(0, 0 + 10, 10, 10)
+              end
+            end
+            pop
+          end
+        end
+      end
+
+      def ruby
+        P5.stroke(0)
+        P5.fill("#ec6158")
+
+        P5.beginShape()
+        P5.vertex(-45, 45)
+        P5.vertex(-45, -45)
+        P5.vertex(-10, -70)
+        P5.vertex(65, 0)
+        P5.vertex(-10, 70)
+        P5.endShape(P5.CLOSE)
+
+        P5.line(-45, 45, -10, 25)
+        P5.line(-45, 0, -10, 25)
+        P5.line(-45, 0, -10, -25)
+        P5.line(-45, -45, -10, -25)
+        P5.line(-10, 70, -10, -70)
+        P5.line(-10, 25, 65, 0)
+        P5.line(-10, -25, 65, 0)
+      end
+
+      def touchStarted
       end
     </script>
     <title>RubyKaigi 2024</title>

@@ -13,12 +13,6 @@ module P5
     }
   end
 
-  def self.noLoop(*args)
-    %x{
-      return window['noLoop'].apply(window, args);
-    }
-  end
-
   def self.width
     %x{
       return window['width'];
@@ -34,6 +28,12 @@ module P5
   def self.windowWidth
     %x{
       return window['windowWidth'];
+    }
+  end
+
+  def self.noLoop(*args)
+    %x{
+      return window['noLoop'].apply(window, args);
     }
   end
 

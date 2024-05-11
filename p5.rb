@@ -31,6 +31,18 @@ module P5
     }
   end
 
+  def self.push
+    %x{
+      return window['push'];
+    }
+  end
+
+  def self.pop
+    %x{
+      return window['pop'];
+    }
+  end
+
   def self.noLoop(*args)
     %x{
       return window['noLoop'].apply(window, args);
@@ -130,6 +142,60 @@ module P5
   def self.arc(*args)
     %x{
       return window['arc'].apply(window, args);
+    }
+  end
+
+  def self.translate(*args)
+    %x{
+      return window['translate'].apply(window, args);
+    }
+  end
+
+  def self.rotate(*args)
+    %x{
+      return window['rotate'].apply(window, args);
+    }
+  end
+
+  def self.sin(*args)
+    %x{
+      return window['sin'].apply(window, args);
+    }
+  end
+
+  def self.cos(*args)
+    %x{
+      return window['cos'].apply(window, args);
+    }
+  end
+
+  def self.rectMode(*args)
+    %x{
+      return window['rectMode'].apply(window, args);
+    }
+  end
+
+  def self.beginShape(*args)
+    %x{
+      return window['beginShape'].apply(window, args);
+    }
+  end
+
+  def self.endShape(*args)
+    %x{
+      return window['endShape'].apply(window, args);
+    }
+  end
+
+  def self.vertex(*args)
+    %x{
+      return window['vertex'].apply(window, args);
+    }
+  end
+
+  def self.line(*args)
+    %x{
+      return window['line'].apply(window, args);
     }
   end
 

@@ -31,6 +31,12 @@ module P5
     }
   end
 
+  def self.DEGREES
+    %x{
+      return window['DEGREES'];
+    }
+  end
+
   def self.noLoop(*args)
     %x{
       return window['noLoop'].apply(window, args);

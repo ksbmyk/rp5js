@@ -103,6 +103,12 @@ module P5
     }
   end
 
+  def self.angleMode(*args)
+    %x{
+      return window['angleMode'].apply(window, args);
+    }
+  end
+
   %x{
     window.setup = function() { Opal.top.$setup(); };
     window.draw = function() { Opal.top.$draw(); };

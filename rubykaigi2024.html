@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.opalrb.com/opal/current/opal.js"></script>
+    <script src="https://cdn.opalrb.com/opal/current/opal-parser.js" onload="Opal.load('opal-parser')"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script type="text/ruby" src="p5.rb"></script>
+    <script type="text/ruby">
+      def setup
+        P5.createCanvas(400, 400)
+        P5.background("#fced4f")
+        noLoop
+      end
+
+      def draw
+        frame
+
+      end
+
+      def frame
+        P5.strokeWeight(3)
+        P5.fill("#9cee60")
+        P5.ellipse(0, 0, 280)
+        P5.fill(255)
+        P5.ellipse(0, 0, 250)
+        P5.fill("#9cee60")
+        P5.ellipse(0, 0, 190)
+        P5.fill(255)
+        P5.ellipse(0, 0, 170)
+      end
+
+
+
+    </script>
+    <title>RubyKaigi 2024</title>
+  </head>
+  <body>
+
+  </body>
+</html>

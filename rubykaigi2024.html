@@ -5,7 +5,7 @@
     <script src="https://cdn.opalrb.com/opal/current/opal.js"></script>
     <script src="https://cdn.opalrb.com/opal/current/opal-parser.js" onload="Opal.load('opal-parser')"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-    <script type="text/ruby" src="p5.rb"></script>
+    <script type="text/ruby" src="https://raw.githubusercontent.com/ksbmyk/rp5js/gh-pages/p5.rb"></script>
     <script type="text/ruby">
       def setup
         P5.createCanvas(400, 400)
@@ -47,27 +47,27 @@
             angle = i * interval_angle
             x = radius * P5.cos(angle)
             y = radius * P5.sin(angle)
-            P5.push
-            P5.translate(x, y)
-            P5.rotate(angle)
-            P5.rectMode(P5.CENTER)
+            #P5.push
+            #P5.translate(x, y)
+            #P5.rotate(angle)
+            #P5.rectMode(P5.CENTER)
 
-            if t.even?
-              if i.odd?
-                P5.rect(0, 0, 10, 10)
-              else
-                P5.rect(0, 0 - 10, 10, 10)
-                P5.rect(0, 0 + 10, 10, 10)
-              end
-            else
-              if i.even?
-                P5.rect(0, 0, 10, 10)
-              else
-                P5.rect(0, 0 - 10, 10, 10)
-                P5.rect(0, 0 + 10, 10, 10)
-              end
-            end
-            pop
+            #if t.even?
+            #  if i.odd?
+            #    P5.rect(0, 0, 10, 10)
+            #  else
+            #    P5.rect(0, 0 - 10, 10, 10)
+            #    P5.rect(0, 0 + 10, 10, 10)
+            #  end
+            #else
+            #  if i.even?
+            #    P5.rect(0, 0, 10, 10)
+            #  else
+            #    P5.rect(0, 0 - 10, 10, 10)
+            #    P5.rect(0, 0 + 10, 10, 10)
+            #  end
+            #end
+            #P5.pop
           end
         end
       end
@@ -94,6 +94,8 @@
       end
 
       def touchStarted
+      end
+      def mouseClicked
       end
     </script>
     <title>RubyKaigi 2024</title>
